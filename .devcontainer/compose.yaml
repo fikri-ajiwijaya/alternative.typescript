@@ -3,6 +3,7 @@ services:
     build:
       args:
         USERNAME: ${USERNAME}
+        COMPOSE_PROJECT_NAME: ${COMPOSE_PROJECT_NAME}
       cache_from:
         - type=local,src=../${COMPOSE_PROJECT_NAME}.cache
       cache_to:
