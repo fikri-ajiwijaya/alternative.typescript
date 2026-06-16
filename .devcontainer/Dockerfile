@@ -1,5 +1,7 @@
 FROM debian:sid
 
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
+
 RUN apt-get update && \
     apt-get -y install git gnupg patch ssh
 
