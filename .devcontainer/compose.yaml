@@ -1,7 +1,12 @@
 services:
   devcontainer:
+    build:
+      args:
+        USERNAME: ${USERNAME}
+      context: .
     command: sleep infinity
-    image: debian:sid
+    pull_policy: never
+    user: ${USERNAME}
     volumes:
       - type: bind
         source: ..
