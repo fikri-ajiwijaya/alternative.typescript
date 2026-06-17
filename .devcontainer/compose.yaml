@@ -1,5 +1,5 @@
 services:
-  devcontainer:
+  alternative:
     build:
       args:
         USERNAME: ${USERNAME}
@@ -17,6 +17,9 @@ services:
     volumes:
       - type: bind
         source: ..
+        target: /workspaces/alternative/${COMPOSE_PROJECT_NAME}
+      - type: bind
+        source: ../../../${COMPOSE_PROJECT_NAME}
         target: /workspaces/${COMPOSE_PROJECT_NAME}
       - type: volume
         source: dotfiles

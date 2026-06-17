@@ -8,6 +8,6 @@
 	},
 	"dockerComposeFile": "compose.yaml",
 	"initializeCommand": "echo 'COMPOSE_PROJECT_NAME=${localWorkspaceFolderBasename}' > .env",
-	"service": "devcontainer",
+	"service": "alternative",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
 }
