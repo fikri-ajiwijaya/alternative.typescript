@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+file_count=$(
+	find "/workspaces/${COMPOSE_PROJECT_NAME}" -type f -printf '%P\n' \
+	| grep -vf "/workspaces/alternative/${COMPOSE_PROJECT_NAME}/template/ignore" \
+	| wc -l
+)
+
+if [ "${file_count}" -eq 0 ]
+then
+	cp -a "/workspaces/alternative/${COMPOSE_PROJECT_NAME}/template/worktree/." "/workspaces/${COMPOSE_PROJECT_NAME}"
+fi

@@ -27,6 +27,7 @@ USER root
 ARG COMPOSE_PROJECT_NAME
 COPY --chmod=644 --chown="${USERNAME}:${USERNAME}" '.vimrc' "/home/${USERNAME}"
 COPY --chmod=755 'dotfiles_hook' '/usr/local/bin'
+COPY --chmod=755 'template_hook' '/usr/local/bin'
 RUN install -d -o "${USERNAME}" -g "${USERNAME}" "/home/${USERNAME}/dotfiles" && \
     install -d -o "${USERNAME}" -g "${USERNAME}" "/workspaces/${COMPOSE_PROJECT_NAME}" && \
     install -d -o "${USERNAME}" -g "${USERNAME}" "/workspaces/alternative/${COMPOSE_PROJECT_NAME}" && \

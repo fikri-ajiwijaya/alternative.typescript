@@ -10,8 +10,11 @@ services:
         - type=local,dest=../${COMPOSE_PROJECT_NAME}.cache,mode=max
       context: .
     command: sleep infinity
+    environment:
+      COMPOSE_PROJECT_NAME: ${COMPOSE_PROJECT_NAME}
     post_start:
       - command: dotfiles_hook
+      - command: template_hook
     pull_policy: never
     user: ${USERNAME}
     volumes:
